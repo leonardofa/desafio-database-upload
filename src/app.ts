@@ -23,6 +23,15 @@ app.use((err: Error, request: Request, response: Response, _: NextFunction) => {
     });
   }
 
+  if (err instanceof TypeError) {
+    if (err.message.includes("'filename'")) {
+      return response.status(400).json({
+        status: 'error',
+        message: 'A file is required to proceed',
+      });
+    }
+  }
+
   console.error(err);
 
   return response.status(500).json({

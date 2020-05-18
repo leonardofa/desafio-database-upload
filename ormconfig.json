@@ -5,6 +5,7 @@
   "username": "postgres",
   "password": "docker",
   "database": "gostack_desafio06",
+  "logging": true,
   "entities": ["./src/models/*.ts"],
   "migrations": ["./src/database/migrations/*.ts"],
   "cli": {
